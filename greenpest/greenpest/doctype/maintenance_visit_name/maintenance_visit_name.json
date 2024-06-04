@@ -1,0 +1,41 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-06-03 14:07:52.613957",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "maintenance_visit_name",
+  "ref_doctype"
+ ],
+ "fields": [
+  {
+   "fieldname": "maintenance_visit_name",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Maintenance Visit Name",
+   "options": "Maintenance Visit Name"
+  },
+  {
+   "fieldname": "ref_doctype",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Ref Doctype",
+   "options": "DocType"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2024-06-03 14:07:52.613957",
+ "modified_by": "Administrator",
+ "module": "Greenpest",
+ "name": "Maintenance Visit Name",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

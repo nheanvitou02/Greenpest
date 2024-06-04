@@ -1,0 +1,98 @@
+<!-- ###############################################################################
+#  table_view.html
+###############################################################################
+###############################################################################
+#   This code is for Create Pre Production Dimension
+#
+#   History:
+#        25-05-2024  Sopheak   Created
+###############################################################################
+#   This table html show in Doctype Quotaion and BOM
+#
+#   History:
+#        25-05-2024  Sopheak   Created
+#   Taks: 
+###############################################################################
+-->
+<html>
+<style>
+  .table th,
+  .table td {
+    padding: 6.5px !important;
+  }
+
+  .pagi_active {
+    margin: 3px;
+    border-radius: 5px;
+    border: 1px;
+    width: 30px;
+    background-color: #dbd7d7;
+    color: #383838;
+  }
+
+  .back,
+  .next,
+  .page-btn {
+    margin: 3px;
+    border-radius: 5px;
+    border: 0.5px;
+    width: 30px;
+  }
+
+  .back:hover {
+    background-color: #dbd7d7;
+    color: #383838;
+  }
+
+  .next:hover {
+    background-color: #dbd7d7;
+    color: #383838;
+  }
+
+  .page-btn:hover {
+    background-color: #dbd7d7;
+    color: #383838;
+  }
+</style>
+
+<body>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <td>{{ _("Maintenance Schedule Name") }}</td>
+        <td>{{ _("Customer") }}</td>
+        <td>{{_("Status")}}</td>
+        <td>{{_("Transaction Date")}}</td>
+        <td style="width: 90px !important ;text-align: center">{{ _("Actions") }}</td>
+      </tr>
+    </thead>
+    <tbody>
+      {% for item in data %}
+      <tr>
+        <td data-label="name">{{ item['name'] }}</td>
+        <td>{{ item['customer'] }}</td>
+        <td>{{ item['status'] }}</td>
+        <td>{{ item['transaction_date'] }}</td>
+        <td style="text-indent: 15px">
+          <button type="button" class="btn btn-info btn-xs view-button" id="btn-review">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+              class="bi bi-folder2-open">
+              <path
+                d="M1 3.5A1.5 1.5 0 0 1 2.5 2h2.764c.958 0 1.76.56 2.311 1.184C7.985 3.648 8.48 4 9 4h4.5A1.5 1.5 0 0 1 15 5.5v.64c.57.265.94.876.856 1.546l-.64 5.124A2.5 2.5 0 0 1 12.733 15H3.266a2.5 2.5 0 0 1-2.481-2.19l-.64-5.124A1.5 1.5 0 0 1 1 6.14zM2 6h12v-.5a.5.5 0 0 0-.5-.5H9c-.964 0-1.71-.629-2.174-1.154C6.374 3.334 5.82 3 5.264 3H2.5a.5.5 0 0 0-.5.5zm-.367 1a.5.5 0 0 0-.496.562l.64 5.124A1.5 1.5 0 0 0 3.266 14h9.468a1.5 1.5 0 0 0 1.489-1.314l.64-5.124A.5.5 0 0 0 14.367 7H1.633z" />
+            </svg>
+          </button>
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  {% if data|length == 0 %}
+  <div class="grid-empty text-center">
+    <img src="/assets/frappe/images/ui-states/grid-empty-state.svg" alt="Grid Empty State"
+      class="grid-empty-illustration">
+    No Data
+  </div>
+  {% endif %}
+</body>
+
+</html>
